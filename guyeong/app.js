@@ -104,7 +104,8 @@
             interests: data.getAll('interest'),
             consent_privacy: '동의'
           },
-          source_context: { landing: 'bemove-landing', branch: form.dataset.branch },
+          // Formula X 개별 응답 화면의 "유입"은 source_context.utm_source 를 읽는다
+          source_context: Object.assign({ landing: 'bemove-landing', branch: form.dataset.branch, page: location.href }, tracking()),
           consent_marketing: !!data.get('consent_marketing')
         }, tracking())
       }).then(function (responseId) {
