@@ -141,6 +141,14 @@
   }
   forms.forEach(bindForm);
 
+  // 간단 신청형: 첫 신청 버튼이 화면에서 사라지면 아래 고정 버튼을 보여 준다(버튼 두 개가 동시에 보이지 않게)
+  var qkBar = document.querySelector(".qk-bar"), qkFirst = document.querySelector(".qk-first");
+  if (qkBar && qkFirst) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { qkBar.hidden = es[0].isIntersecting || es[0].boundingClientRect.top > 0; }).observe(qkFirst);
+    } else { qkBar.hidden = false; }
+  }
+
   // 트레이너 프로필 창
   document.querySelectorAll('[data-sheet]').forEach(function (button) {
     button.addEventListener('click', function () {

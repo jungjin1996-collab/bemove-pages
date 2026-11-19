@@ -531,3 +531,32 @@ footer a { display: inline-block; padding: 12px 0; }
 .pv-big .dg, .pv-t .dg { display: inline-block; width: .64em; text-align: center; }
 .pv-letter p:nth-last-of-type(3) { color: #cfcfcf; font-weight: 400; }
 .pv-letter p:nth-last-of-type(2) { color: var(--white); font-weight: 700; }
+
+/* 간단 신청형(quick): 한 화면 + 아래 고정 버튼 */
+.qk .pv-page { padding-bottom: calc(86px + env(safe-area-inset-bottom)); }
+.qk-hero { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: min(68svh, 560px); padding: 16px 16px 20px; background: #111 center / cover; }
+.qk-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.85) 100%); }
+.qk-hero > * { position: relative; }
+.qk-logo { width: 84px; height: auto; }
+.qk-hero h1 { margin: 12px 0 0; line-height: 1.08; letter-spacing: -.05em; }
+.qk-hero h1 span { display: block; font-size: clamp(30px, 8.6vw, 42px); font-weight: 900; }
+.qk-hero h1 .qk-free { font-size: clamp(46px, 13vw, 64px); color: var(--orange); }
+.qk-points { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; padding: 0; list-style: none; }
+.qk-points li { padding: 5px 11px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.35); font-size: 14px; font-weight: 700; }
+.qk-first { padding: 18px 20px 26px; text-align: center; }
+.qk-first .qk-cta { max-width: none; min-height: 58px; font-size: 18px; }
+.qk-sec h2 { font-size: 22px; }
+.qk-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 16px; }
+.qk-steps { display: grid; gap: 12px; margin: 16px 0 0; padding: 0; list-style: none; }
+.qk-steps li { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 12px; font-size: 16px; }
+.qk-steps b { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: var(--orange); color: #000; font-weight: 900; }
+.qk-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(0,0,0,.92); border-top: 1px solid #222; }
+.qk-bar .pv-cta { max-width: 528px; }
+.qk-optnote { margin: 14px 0 0; font-size: 13px; color: var(--soft); }
+.qk-sheet .po-opt { margin-top: 10px; }
+.qk-copy .pv-tag { display: inline-block; }
+.qk-hero { min-height: min(62svh, 520px); padding-bottom: 14px; }
+.qk-first { padding-top: 16px; }
+.qk-bar[hidden] { display: none; }
+.nw { white-space: nowrap; }
+.qk-first { margin-top: 0; }
