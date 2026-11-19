@@ -382,6 +382,22 @@ footer a { display: inline-block; padding: 12px 0; }
 .pv-gallery img { aspect-ratio: 16 / 10; object-fit: cover; transition: transform .4s cubic-bezier(.16,1,.3,1); }
 .pv-gallery figure:hover img { transform: scale(1.025); }
 .pv-gallery figcaption { margin-top: 8px; font-size: 14px; font-weight: 700; }
+/* 실제 사진 · 렌더링: 크게, 이름표는 사진 왼쪽 아래 */
+.pv-shot { position: relative; margin: 0; overflow: hidden; background: #161616; }
+.pv-shot img { display: block; width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .5s cubic-bezier(.16,1,.3,1); }
+.pv-shot:hover img { transform: scale(1.025); }
+.pv-shot span { position: absolute; left: 0; bottom: 0; padding: 6px 10px; background: rgba(0,0,0,.72); color: var(--white); font-size: 13.5px; font-weight: 700; }
+.pv-shot--lead { margin-top: 18px; }
+.pv-shot--lead img, .pv-shot--tall img { aspect-ratio: 4 / 5; }
+.pv-shot--lead span { font-size: 15px; padding: 8px 12px; }
+.pv-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.pv-shots--park { grid-template-rows: auto auto; }
+.pv-shots--park .pv-shot--tall { grid-row: span 2; }
+.pv-shots--park .pv-shot:not(.pv-shot--tall) img { aspect-ratio: auto; }
+.pv-h3 { margin-top: 34px; font-size: 21px; font-weight: 900; }
+.pv-renders { display: grid; gap: 8px; margin-top: 18px; }
+.pv-renders .pv-shot img { aspect-ratio: 16 / 10; }
+.pv-wide { grid-column: 1 / -1; }
 .pv-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
 .pv-tags li { padding: 8px 14px; border: 1px solid var(--orange); color: var(--orange); font-size: 15px; font-weight: 700; }
 .pv-list { margin-top: 14px; }

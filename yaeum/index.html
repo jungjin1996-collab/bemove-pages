@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>야음동 헬스장 비무브짐 12월 4일 리뉴얼 오픈 | 오픈 방문 예약</title>
+<title>야음동 헬스장 비무브짐 12월 4일 리뉴얼 오픈 | 오픈 혜택 미리 받기</title>
 <meta name="description" content="야음동 비무브짐이 12월 4일 새로 엽니다. 사전등록하면 회원권 50%(선착순 100명), GX 수업 무료, PT 2회 무료, 12개월 등록 시 락커 3개월 무료.">
-<meta property="og:title" content="야음동 헬스장 비무브짐 12월 4일 리뉴얼 오픈 | 오픈 방문 예약">
+<meta property="og:title" content="야음동 헬스장 비무브짐 12월 4일 리뉴얼 오픈 | 오픈 혜택 미리 받기">
 <meta property="og:description" content="야음동 비무브짐이 12월 4일 새로 엽니다. 사전등록하면 회원권 50%(선착순 100명), GX 수업 무료, PT 2회 무료, 12개월 등록 시 락커 3개월 무료.">
 <link rel="stylesheet" href="./fonts.css">
 <link rel="stylesheet" href="./style.css">
@@ -20,7 +20,7 @@
 </div>
 <div class="pv-sticky" aria-hidden="true">
   <p>마감까지 <span class="pv-t" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span></p>
-  <button class="pv-sbtn" type="button" data-sheet="apply-sheet">방문 예약하기</button>
+  <button class="pv-sbtn" type="button" data-sheet="apply-sheet">혜택 먼저 받기</button>
 </div>
 <main class="pv-page">
   <header class="pv-hero" style="background-image:url(./assets/yaeum/r-hero.jpg)">
@@ -33,12 +33,12 @@
   <section class="pv-count" aria-label="사전등록 마감">
     <p class="pv-dl">사전등록 마감까지</p>
     <span class="pv-big" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span>
-    <div class="pv-seat" data-live-count data-capacity="100">
-      <div class="pv-seat-row"><span>선착순 <b>100</b>명</span><span class="pv-left" data-left>마감되면 정상가</span></div>
+    <div class="pv-seat" data-live-count data-capacity="100" data-tier="40" data-tier-label="1차" data-tier-next="2차">
+      <div class="pv-seat-row"><span data-seat-title>1차 선착순 <b>40</b>명</span><span class="pv-left" data-left>마감되면 정상가</span></div>
       <div class="pv-meter"><i data-meter style="width:0%"></i></div>
     </div>
-    <button class="pv-cta" type="button" data-sheet="apply-sheet">방문 예약하기 <span>|</span> 남은 자리 잡기</button>
-    <p class="pv-sub">결제 없이 30초 · 신청하면 바로 연락드려요</p>
+    <button class="pv-cta" type="button" data-sheet="apply-sheet">혜택 먼저 받기 <span>|</span> 남은 자리 잡기</button>
+    <p class="pv-sub">결제 없이 30초 · 혜택만 먼저 받아 두세요</p>
   </section>
 
   <div class="story pv-story">
@@ -55,9 +55,9 @@
   <section class="pv-sec pv-why">
     <h2 class="reveal">왜 지금 사전등록일까요</h2>
     <ol class="pv-whylist" data-stagger>
-      <li><b>01</b><div><strong>1년 중 가장 싼 가격</strong><span>오픈 특가 50%는 사전등록한 분 중 선착순 100명만 받습니다. 마감되면 정상가예요.</span></div></li>
+      <li><b>01</b><div><strong>1년 중 가장 싼 가격</strong><span>오픈 특가 50%는 선착순 100명만 받습니다. 1차 40명이 먼저 마감되고, 100명이 차면 정상가예요.</span></div></li>
       <li><b>02</b><div><strong>새로 꾸민 공간을 가장 먼저</strong><span>리뉴얼한 운동 공간과 새로 생긴 GX룸을 오픈 첫날부터 씁니다.</span></div></li>
-      <li><b>03</b><div><strong>부담 없이, 먼저 해 보고</strong><span>결제 X, 등록 강요 X. GX 수업과 PT 2회를 먼저 받아 보고 결정하세요.</span></div></li>
+      <li><b>03</b><div><strong>혜택만 먼저, 부담은 없이</strong><span>결제 X, 방문 약속 X. 이름만 남기면 혜택이 내 이름으로 잡히고, 오픈 후 와서 보고 결정하면 됩니다.</span></div></li>
     </ol>
   </section>
 
@@ -68,33 +68,54 @@
         <p class="pv-olabel">사전등록 혜택 <b>1</b></p>
         <p class="pv-off"><span class="num" data-count="50">50</span><i>%</i><small>할인</small></p>
         <h3>오픈 특가 회원권 <em>선착순 100명</em></h3>
-        <ul><li>지금 사전등록한 순서대로 적용</li><li>100명이 차면 바로 정상가</li></ul>
-        <div class="pv-price"><button class="pv-link" type="button" data-sheet="apply-sheet">예약하기</button></div>
+        <ul><li>지금 사전등록한 순서대로 적용</li><li>1차 40명 → 2차 60명, 100명이 차면 정상가</li></ul>
+        <div class="pv-price"><button class="pv-link" type="button" data-sheet="apply-sheet">혜택 받기</button></div>
       </li>
       <li class="pv-offer reveal">
         <p class="pv-olabel">사전등록 혜택 <b>2</b></p>
         <p class="pv-off"><span class="num" data-count="100">100</span><i>%</i><small>무료</small></p>
         <h3>GX 수업 <em>사전등록 시</em></h3>
         <ul><li>요가 · 필라테스 · 줌바 · 방송댄스</li><li>새로 생긴 GX룸에서 무료 수업</li></ul>
-        <div class="pv-price"><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">예약하기</button></div>
+        <div class="pv-price"><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">혜택 받기</button></div>
       </li>
       <li class="pv-offer reveal">
         <p class="pv-olabel">사전등록 혜택 <b>3</b></p>
         <p class="pv-off"><span class="num" data-count="100">100</span><i>%</i><small>무료</small></p>
         <h3>개인 락커 3개월 <em>12개월 등록 시</em></h3>
         <ul><li>운동복·짐을 두고 다니는 내 자리</li></ul>
-        <div class="pv-price"><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">예약하기</button></div>
+        <div class="pv-price"><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">혜택 받기</button></div>
       </li>
       <li class="pv-offer reveal">
         <p class="pv-olabel">사전등록 혜택 <b>4</b></p>
         <p class="pv-off"><span class="num" data-count="14">14</span><i class="long">만원</i><small>상당 무료</small></p>
         <h3>1:1 PT 2회 <em>사전등록 시</em></h3>
         <ul><li>트레이너가 내 몸 상태부터 확인</li><li>목표에 맞춘 운동 순서를 잡아 드려요</li></ul>
-        <div class="pv-price"><s>140,000원</s><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">예약하기</button></div>
+        <div class="pv-price"><s>140,000원</s><strong>0원</strong><button class="pv-link" type="button" data-sheet="apply-sheet">혜택 받기</button></div>
       </li>
     </ul>
     <p class="pv-note">* [ ] 안의 금액은 확정 전입니다. 확정되면 바뀝니다.</p>
-    <div class="pv-two"><a class="pv-ghost" href="#faq">자주 묻는 질문</a><button class="pv-solid" type="button" data-sheet="apply-sheet">방문 예약하기</button></div>
+    <div class="pv-two"><a class="pv-ghost" href="#faq">자주 묻는 질문</a><button class="pv-solid" type="button" data-sheet="apply-sheet">혜택 먼저 받기</button></div>
+  </section>
+
+  <section class="pv-sec pv-real" id="real">
+    <h2 class="reveal">지금 야음점, 실제 모습</h2>
+    <p class="pv-body">렌더링 말고 진짜 사진부터 보여 드릴게요.<br>400평대 공간에 웨이트 기구가 이미 이만큼 있습니다.</p>
+    <figure class="pv-shot pv-shot--lead"><img src="./assets/yaeum/p-weight.jpg" alt="야음점 웨이트 존 실제 사진" loading="lazy" width="1080" height="1350"><span>웨이트 존</span></figure>
+    <div class="pv-shots">
+      <figure class="pv-shot"><img src="./assets/yaeum/p-machine.jpg" alt="야음점 머신 존 실제 사진" loading="lazy" width="720" height="720"><span>머신 존</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/p-free.jpg" alt="야음점 프리웨이트 실제 사진" loading="lazy" width="720" height="720"><span>프리웨이트</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/p-plate.jpg" alt="야음점 플레이트 머신 실제 사진" loading="lazy" width="720" height="720"><span>플레이트 머신</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/p-cardio.jpg" alt="야음점 유산소 존 실제 사진" loading="lazy" width="720" height="720"><span>유산소 존</span></figure>
+    </div>
+    <h3 class="pv-h3">차 가지고 와도 편해요</h3>
+    <p class="pv-body">건물 앞 주차장과 바로 옆 주차타워를 쓸 수 있어요.</p>
+    <div class="pv-shots pv-shots--park">
+      <figure class="pv-shot pv-shot--tall"><img src="./assets/yaeum/p-building.jpg" alt="야음점 건물 실제 사진" loading="lazy" width="1080" height="1350"><span>야음점 건물</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/p-park-tower.jpg" alt="주차타워 실제 사진" loading="lazy" width="720" height="720"><span>주차타워</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/p-park-gate.jpg" alt="주차타워 입구 실제 사진" loading="lazy" width="720" height="720"><span>주차타워 입구</span></figure>
+    </div>
+    <p class="pv-note">현재 야음점 실제 사진 · 리뉴얼 후 일부 바뀔 수 있어요</p>
+    <div class="pv-two"><button class="pv-solid pv-wide" type="button" data-sheet="apply-sheet">혜택 먼저 받기</button></div>
   </section>
 
   <section class="pv-sec pv-equip" id="equipment">
@@ -122,19 +143,19 @@
   <section class="pv-sec" id="about">
     <h2>야음점 <a class="pv-map" href="https://map.naver.com/p/search/%EB%B9%84%EB%AC%B4%EB%B8%8C%EC%A7%90%20%EC%95%BC%EC%9D%8C%EC%A0%90" rel="noopener" aria-label="네이버 지도에서 보기">N</a></h2>
     <p class="pv-body">야음동 비무브짐이 리뉴얼을 마치고 12월 4일 다시 문을 엽니다.</p><p class="pv-body">GX룸을 새로 만들어 요가, 필라테스, 줌바, 방송댄스 수업을 시작하고, 상담실과 라운지, 샤워실까지 새로 꾸몄습니다.</p>
-    <dl class="pv-facts"><div><dt>24시간 운영</dt></div><div><dt>야음동</dt><dd>울산 남구 수암로128번길</dd></div><div><dt>400평대</dt></div></dl>
+    <dl class="pv-facts"><div><dt>24시간 운영</dt></div><div><dt>야음동</dt><dd>울산 남구 수암로128번길</dd></div><div><dt>주차</dt><dd>건물 앞 주차장 · 옆 주차타워</dd></div><div><dt>400평대</dt></div></dl>
   </section>
 
   <section class="pv-sec" id="preview">
-    <h2>새로워진 야음점 미리보기</h2>
-    <p class="pv-body">아래 사진은 리뉴얼 완공 예상 렌더링입니다. 오픈 후 실제 사진으로 바뀝니다.</p>
-    <div class="pv-gallery">
-      <figure><img src="./assets/yaeum/r-reception.jpg" alt="야음점 상담실 · 리셉션 렌더링" loading="lazy" width="1280" height="720"><figcaption>상담실 · 리셉션</figcaption></figure>
-      <figure><img src="./assets/yaeum/r-gx.jpg" alt="야음점 GX룸 렌더링" loading="lazy" width="1280" height="720"><figcaption>GX룸</figcaption></figure>
-      <figure><img src="./assets/yaeum/r-cardio.jpg" alt="야음점 유산소 존 렌더링" loading="lazy" width="1280" height="720"><figcaption>유산소 존</figcaption></figure>
-      <figure><img src="./assets/yaeum/r-pt-room.jpg" alt="야음점 스트레칭 · PT 존 렌더링" loading="lazy" width="1280" height="720"><figcaption>스트레칭 · PT 존</figcaption></figure>
-      <figure><img src="./assets/yaeum/r-cardio-wall.jpg" alt="야음점 천국의 계단 · 러닝머신 렌더링" loading="lazy" width="1280" height="720"><figcaption>천국의 계단 · 러닝머신</figcaption></figure>
-      <figure><img src="./assets/yaeum/r-shower.jpg" alt="야음점 파우더룸 렌더링" loading="lazy" width="1280" height="720"><figcaption>파우더룸</figcaption></figure>
+    <h2>리뉴얼 후 모습</h2>
+    <p class="pv-body">새로 꾸미는 공간의 완공 예상 렌더링입니다. 오픈 후 실제 사진으로 바뀝니다.</p>
+    <div class="pv-renders">
+      <figure class="pv-shot"><img src="./assets/yaeum/r-reception.jpg" alt="야음점 상담실 · 리셉션 렌더링" loading="lazy" width="1280" height="720"><span>상담실 · 리셉션</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/r-gx.jpg" alt="야음점 GX룸 렌더링" loading="lazy" width="1280" height="720"><span>GX룸</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/r-cardio.jpg" alt="야음점 유산소 존 렌더링" loading="lazy" width="1280" height="720"><span>유산소 존</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/r-pt-room.jpg" alt="야음점 스트레칭 · PT 존 렌더링" loading="lazy" width="1280" height="720"><span>스트레칭 · PT 존</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/r-cardio-wall.jpg" alt="야음점 천국의 계단 · 러닝머신 렌더링" loading="lazy" width="1280" height="720"><span>천국의 계단 · 러닝머신</span></figure>
+      <figure class="pv-shot"><img src="./assets/yaeum/r-shower.jpg" alt="야음점 파우더룸 렌더링" loading="lazy" width="1280" height="720"><span>파우더룸</span></figure>
     </div>
   </section>
 
@@ -150,7 +171,7 @@
   <section class="pv-sec" id="faq">
     <h2>자주 묻는 질문</h2>
     <div class="po-faq">
-      <details><summary>사전등록하면 돈을 내야 하나요?</summary><p>아니요. 이름과 번호만 남기시면 됩니다. 회원권은 오픈 후 직접 와서 보고 결정하세요.</p></details>
+      <details><summary>사전등록하면 돈을 내거나 꼭 와야 하나요?</summary><p>아니요. 이름과 번호만 남기면 혜택이 먼저 잡힙니다. 오픈 후 와서 직접 보고, 마음에 들 때만 등록하세요.</p></details>
       <details><summary>언제 연락이 오나요?</summary><p>신청하시면 담당자가 바로 전화드려 방문 날짜를 잡아 드립니다. 밤늦게 신청하시면 다음 날 오전에 연락드려요.</p></details>
       <details><summary>GX 수업은 언제부터 들을 수 있나요?</summary><p>12월 4일 오픈일부터 요가, 필라테스, 줌바, 방송댄스 수업을 사전등록하신 분은 무료로 들을 수 있습니다.</p></details>
     </div>
@@ -170,7 +191,7 @@
   <section class="pv-sec pv-end">
     <p class="pv-dl">사전등록 마감까지</p>
     <span class="pv-big" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span>
-    <button class="pv-cta" type="button" data-sheet="apply-sheet">방문 예약하기 <span>|</span> 남은 자리 잡기</button>
+    <button class="pv-cta" type="button" data-sheet="apply-sheet">혜택 먼저 받기 <span>|</span> 남은 자리 잡기</button>
   </section>
 
   <footer>
@@ -180,19 +201,19 @@
   </footer>
 </main>
 
-<dialog class="sheet pv-sheet" id="apply-sheet" aria-label="오픈 방문 예약">
+<dialog class="sheet pv-sheet" id="apply-sheet" aria-label="오픈 혜택 미리 받기">
   <button class="sheet-close" type="button" aria-label="닫기">닫기</button>
   <div class="sheet-body">
     <p class="pv-band small">2026.12.04 OPEN</p>
-    <h3>오픈 방문 예약</h3>
-    <p class="pv-body">이름과 번호만 남기면, 담당자가 바로 연락드려 방문 날짜를 잡아 드려요.</p>
+    <h3>오픈 혜택 미리 받기</h3>
+    <p class="pv-body">이름과 번호만 남기면 혜택이 내 이름으로 잡혀요. 방문 날짜는 통화하면서 편하게 정하면 돼요.</p>
     <p class="pv-sheet-seat"><span data-left-short>선착순 100명</span> · 마감까지 <span class="pv-t" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span></p>
-    <form class="lead-form po-form" data-branch="yaeum" data-request="사전등록" data-done-title="신청 완료! 곧 연락드릴게요" data-done-body="담당자가 바로 전화드려 방문 날짜를 잡아 드릴게요. 전화를 못 받으시면 문자로 다시 안내드려요." novalidate>
+    <form class="lead-form po-form" data-branch="yaeum" data-request="사전등록" data-done-title="혜택이 잡혔어요!" data-done-body="담당자가 곧 전화드려 받으신 혜택을 안내해 드릴게요. 전화를 못 받으시면 문자로 남겨 드려요." novalidate>
       <div class="po-fields">
         <label for="pv-name">이름</label><input id="pv-name" name="name" type="text" autocomplete="name" placeholder="홍길동" required>
         <label for="pv-phone">휴대폰 번호</label><input id="pv-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" required>
       </div>
-      <fieldset class="po-opt pv-visit"><legend>언제 와 보실래요? (선택)</legend><div class="chips"><label><input type="checkbox" name="visit" value="첫 주 평일"><span>첫 주 평일</span></label><label><input type="checkbox" name="visit" value="첫 주말"><span>첫 주말</span></label><label><input type="checkbox" name="visit" value="오픈 전 미리 상담"><span>오픈 전 미리 상담</span></label></div></fieldset>
+      <fieldset class="po-opt pv-visit"><legend>와 보고 싶은 때 (선택 · 안 골라도 돼요)</legend><div class="chips"><label><input type="checkbox" name="visit" value="첫 주 평일"><span>첫 주 평일</span></label><label><input type="checkbox" name="visit" value="첫 주말"><span>첫 주말</span></label><label><input type="checkbox" name="visit" value="오픈 전 미리 상담"><span>오픈 전 미리 상담</span></label></div></fieldset>
       <details class="pv-more"><summary>관심 운동 · 시간대 선택 (선택)</summary>
         <fieldset class="po-opt"><legend>관심 운동</legend><div class="chips"><label><input type="checkbox" name="interest" value="헬스"><span>헬스</span></label><label><input type="checkbox" name="interest" value="PT"><span>PT</span></label><label><input type="checkbox" name="interest" value="요가"><span>요가</span></label><label><input type="checkbox" name="interest" value="필라테스"><span>필라테스</span></label><label><input type="checkbox" name="interest" value="줌바"><span>줌바</span></label><label><input type="checkbox" name="interest" value="방송댄스"><span>방송댄스</span></label></div></fieldset>
         <fieldset class="po-opt"><legend>운동할 시간대</legend><div class="chips"><label><input type="checkbox" name="time" value="새벽"><span>새벽</span></label><label><input type="checkbox" name="time" value="오전"><span>오전</span></label><label><input type="checkbox" name="time" value="오후"><span>오후</span></label><label><input type="checkbox" name="time" value="저녁"><span>저녁</span></label><label><input type="checkbox" name="time" value="밤"><span>밤</span></label></div></fieldset>
@@ -201,8 +222,8 @@
       <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 문자 수신 동의</span></label>
       <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="error form-error" role="alert"></p>
-      <button class="pv-cta" type="submit">예약하고 혜택 받기</button>
-      <p class="pv-sub">신청 후 바로 연락드려요 · 결제는 방문해서 직접 보고 결정</p>
+      <button class="pv-cta" type="submit">혜택 받아두기</button>
+      <p class="pv-sub">결제 X · 방문 약속 X · 받아 두기만 해도 혜택은 그대로</p>
     </form>
   </div>
 </dialog>

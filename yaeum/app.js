@@ -219,11 +219,19 @@
     var cap = Number(box.dataset.capacity);
     var leftEl = box.querySelector('[data-left]');
     var meter = box.querySelector('[data-meter]');
+    // 1차·2차로 나눠 보여 준다 (예: 1차 40명이 차면 2차 = 나머지). 숫자는 실제 신청 수 그대로
+    var tier = Number(box.dataset.tier) || 0;
+    var titleEl = box.querySelector('[data-seat-title]');
     function show(taken) {
-      var left = Math.max(cap - taken, 0);
+      var first = tier && taken < tier;
+      var size = first ? tier : (tier ? cap - tier : cap);
+      var used = first ? taken : (tier ? taken - tier : taken);
+      var left = Math.max(size - used, 0);
+      var label = tier ? (first ? box.dataset.tierLabel : box.dataset.tierNext) + ' ' : '';
+      if (titleEl && tier) titleEl.innerHTML = label + '선착순 <b>' + size + '</b>명';
       if (leftEl) leftEl.innerHTML = left === 0 ? '마감' : '남은 자리 <b>' + left + '</b>명';
-      if (meter) meter.style.width = Math.min(100, taken / cap * 100) + '%';
-      document.querySelectorAll('[data-left-short]').forEach(function (el) { el.textContent = left === 0 ? '선착순 마감' : '남은 자리 ' + left + '명'; });
+      if (meter) meter.style.width = Math.min(100, used / size * 100) + '%';
+      document.querySelectorAll('[data-left-short]').forEach(function (el) { el.textContent = left === 0 ? '선착순 마감' : label + '남은 자리 ' + left + '명'; });
     }
     // 집계는 텔레그램 알림 스크립트(?count=지점)가 알려 준다. 아직 없으면 안내 문구만
     if (!CONFIG.alertUrl || LOCAL) { if (leftEl) leftEl.textContent = '마감되면 정상가'; return; }
