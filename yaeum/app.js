@@ -55,11 +55,12 @@
   function pixel(kind, name) {
     try { if (typeof window.fbq === 'function') window.fbq(kind, name); } catch (e) {}
   }
+  // "시작" = 신청 창을 열거나, 입력칸을 처음 누르거나, (둘 다 없이) 바로 제출할 때 중 가장 먼저. 한 번만 셈
   var started = false;
+  function markStart() { if (started) return; started = true; track('start'); }
   document.addEventListener('focusin', function (e) {
-    if (started || !e.target.closest || !e.target.closest('.lead-form')) return;
-    started = true;
-    track('start');
+    if (!e.target.closest || !e.target.closest('.lead-form')) return;
+    markStart();
   });
 
   function bindForm(form) {
@@ -77,6 +78,7 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      markStart();
       error.textContent = '';
       form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
       var data = new FormData(form);
@@ -101,7 +103,7 @@
         if (!CAN_ALERT) return Promise.resolve();
         return fetch(CONFIG.alertUrl, {
           method: 'POST', mode: 'no-cors', keepalive: true,
-          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('interest'), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
+          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('interest').concat(data.getAll('history').map(function (h) { return '이전 이용: ' + h; })), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
         }).catch(function () {});
       }
 
@@ -120,6 +122,7 @@
             interests: data.getAll('interest'),
             preferred_time: data.getAll('time'),
             visit_pref: data.getAll('visit'),
+            history: data.getAll('history'),
             consent_privacy: '동의'
           },
           // Formula X 개별 응답 화면의 "유입"은 source_context.utm_source 를 읽는다
@@ -152,7 +155,7 @@
   // 트레이너 프로필 창
   document.querySelectorAll('[data-sheet]').forEach(function (button) {
     button.addEventListener('click', function () {
-      if (button.dataset.sheet === 'apply-sheet') pixel('trackCustom', 'FormOpen');
+      if (button.dataset.sheet === 'apply-sheet') { pixel('trackCustom', 'FormOpen'); markStart(); }
       document.getElementById(button.dataset.sheet).showModal();
     });
   });
