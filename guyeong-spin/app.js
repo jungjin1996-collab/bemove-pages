@@ -337,7 +337,7 @@
   document.querySelectorAll('.qk-copy > :not(.qk-points), .qk-points > li').forEach(function (el, i) {
     el.classList.add('reveal');
     el.style.setProperty('--d', 100 + i * 120 + 'ms');
-    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
+    setTimeout(function () { el.classList.add('in'); }, 30);
   });
   var qkItems = document.querySelectorAll('.qk-sec > h2, .qk-sec > p, .qk-sec > .qk-mid, .qk-points2 > li, .qk-shots > figure, .qk-steps > li, .po-faq > details, .pv-facts > div');
   if (qkItems.length) {
