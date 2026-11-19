@@ -110,6 +110,8 @@
         }, tracking())
       }).then(function (responseId) {
         if (!responseId) throw new Error('no_response_id');
+        // 메타 픽셀 Lead: Formula X 저장 성공 뒤에만, 개인정보 없이
+        try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead'); } catch (e) {}
         showDone('신청이 접수되었습니다', '확인 후 빠르게 연락드리겠습니다.');
       }).catch(function () {
         submit.disabled = false;

@@ -51,6 +51,10 @@
     rpc('marketing_track_event', { p_payload: Object.assign({ event_type: type }, tracking()) }).catch(function () {});
   }
   track('view');
+  // 메타 픽셀(지점별 site.json metaPixels). 머리의 기본 코드가 localhost 에서는 fbq 를 만들지 않으므로 여기서도 조용히 넘어간다.
+  function pixel(kind, name) {
+    try { if (typeof window.fbq === 'function') window.fbq(kind, name); } catch (e) {}
+  }
   var started = false;
   document.addEventListener('focusin', function (e) {
     if (started || !e.target.closest || !e.target.closest('.lead-form')) return;
@@ -124,6 +128,8 @@
         }, tracking())
       }) : Promise.resolve('alert-only')).then(function (responseId) {
         if (!responseId) throw new Error('no_response_id');
+        // 메타 픽셀 Lead: Formula X 저장이 성공했을 때만. 이름·번호 같은 개인정보는 보내지 않는다.
+        if (CONNECTED && responseId !== 'alert-only') pixel('track', 'Lead');
         sendAlert();
         showDone(doneTitle, doneBody);
       }).catch(function () {
@@ -138,6 +144,7 @@
   // 트레이너 프로필 창
   document.querySelectorAll('[data-sheet]').forEach(function (button) {
     button.addEventListener('click', function () {
+      if (button.dataset.sheet === 'apply-sheet') pixel('trackCustom', 'FormOpen');
       document.getElementById(button.dataset.sheet).showModal();
     });
   });

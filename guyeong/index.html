@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="./style.css">
 <script>document.documentElement.classList.add('js')</script>
+<script>
+if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+fbq("set","autoConfig",false,"3003795983291094");
+fbq("init","3003795983291094");
+fbq("track","PageView");
+}
+</script>
 </head>
 <body>
 <div class="page">
@@ -30,7 +38,7 @@
       <label><span class="sr">휴대폰 번호</span><input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="휴대폰 번호" required></label>
     </div>
     <label class="consent"><input type="checkbox" name="consent_privacy" required><span>[필수] 개인정보 수집·이용 동의 (이름, 휴대폰 번호 / 상담 안내 / 상담 완료일로부터 1년 보관, 거부 시 신청 불가) <a href="privacy/">전문 보기</a></span></label>
-      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 안내(문자, 전화) 수신 동의</span></label>
+      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 안내(문자, 전화) 수신 동의</span></label><p class="pixel-note">광고 성과 측정을 위해 메타 픽셀(쿠키)로 방문·신청 여부를 Meta에 보냅니다. 이름·번호는 보내지 않습니다. <a href="privacy/">자세히</a></p>
     <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="error form-error" role="alert"></p>
     <button class="cta cut" type="submit">3주년 혜택 상담 신청</button>
@@ -177,7 +185,7 @@
       <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="terms">수집 항목: 이름, 휴대폰 번호, 관심 운동 · 목적: 상담 및 등록 안내 · 보유 기간: 상담 완료일로부터 1년. 동의를 거부할 수 있으나 거부 시 상담 신청이 제한됩니다.</p>
       <label class="consent"><input type="checkbox" name="consent_privacy" required><span>[필수] 개인정보 수집·이용 동의 (이름, 휴대폰 번호 / 상담 안내 / 상담 완료일로부터 1년 보관, 거부 시 신청 불가) <a href="privacy/">전문 보기</a></span></label>
-      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 안내(문자, 전화) 수신 동의</span></label>
+      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 안내(문자, 전화) 수신 동의</span></label><p class="pixel-note">광고 성과 측정을 위해 메타 픽셀(쿠키)로 방문·신청 여부를 Meta에 보냅니다. 이름·번호는 보내지 않습니다. <a href="privacy/">자세히</a></p>
       <p class="error form-error" role="alert"></p>
       <button class="cta cut" type="submit">상담 신청하기</button>
     </form>

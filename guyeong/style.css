@@ -260,3 +260,6 @@ footer a { display: inline-block; padding: 12px 0; }
 .doc h1 { font-size: 34px; }
 .doc h2 { margin-top: 28px; font-size: 20px; }
 .doc p, .doc li { margin-top: 8px; color: var(--soft); font-size: 15px; }
+
+.pixel-note { margin: 2px 0 6px; font-size: 12px; line-height: 1.5; color: var(--soft); opacity: .75; }
+.pixel-note a { color: inherit; text-decoration: underline; }

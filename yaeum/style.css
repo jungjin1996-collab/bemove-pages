@@ -226,6 +226,8 @@ fieldset { margin: 0 0 18px; padding: 0; border: 0; }
 .consent { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 10px 0; font-size: 14px; line-height: 1.55; cursor: pointer; }
 .consent input { width: 24px; height: 24px; margin: 0; accent-color: var(--orange); }
 .consent a { display: inline-block; padding: 8px 0; margin: -8px 0; color: var(--gold); }
+.pixel-note { margin: 2px 0 6px; font-size: 12px; line-height: 1.5; color: var(--soft); opacity: .75; }
+.pixel-note a { color: inherit; text-decoration: underline; }
 .hp { position: absolute; left: -9999px; }
 .error { min-height: 22px; margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--gold); }
 .done { padding: 28px 0 8px; }
@@ -398,6 +400,12 @@ footer a { display: inline-block; padding: 12px 0; }
 .pv-renders { display: grid; gap: 8px; margin-top: 18px; }
 .pv-renders .pv-shot img { aspect-ratio: 16 / 10; }
 .pv-wide { grid-column: 1 / -1; }
+/* 무료 체험 랜딩 첫 신청 칸 */
+.tr-quick .tr-qtitle { font-size: 22px; font-weight: 900; letter-spacing: -.04em; }
+.tr-points { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 14px 0 18px; padding: 0; list-style: none; }
+.tr-points li { padding: 7px 12px; border: 1px solid var(--orange); color: var(--orange); font-size: 14.5px; font-weight: 700; }
+.pv-trial #gx video { margin-top: 16px; }
+.pv-facts dd a { color: var(--white); }
 /* 트레이너 비포·애프터 */
 .pv-trainer { margin-top: 26px; }
 .pv-trainer h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin-bottom: 10px; font-size: 16px; font-weight: 700; color: #b5b5b5; }
