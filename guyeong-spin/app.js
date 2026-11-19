@@ -332,6 +332,28 @@
   }, { rootMargin: '0px 0px -12% 0px' });
   targets.forEach(function (el) { revealer.observe(el); });
 
+  // 한 화면형(qk): 내릴 때 글이 한 줄(한 칸)씩 차례로 등장
+  // 첫 화면은 바로 차례로 켬(신청 버튼이 화면 끝에 걸려도 안 숨게)
+  document.querySelectorAll('.qk-copy > :not(.qk-points), .qk-points > li').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.setProperty('--d', 100 + i * 120 + 'ms');
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
+  });
+  var qkItems = document.querySelectorAll('.qk-sec > h2, .qk-sec > p, .qk-sec > .qk-mid, .qk-points2 > li, .qk-shots > figure, .qk-steps > li, .po-faq > details, .pv-facts > div');
+  if (qkItems.length) {
+    qkItems.forEach(function (el) { el.classList.add('reveal'); });
+    var qkSeen = new IntersectionObserver(function (entries) {
+      var n = 0;
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.style.setProperty('--d', Math.min(n++, 6) * 140 + 'ms');
+        entry.target.classList.add('in');
+        qkSeen.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    qkItems.forEach(function (el) { qkSeen.observe(el); });
+  }
+
   var lines = document.querySelectorAll('.story p');
   var liner = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
