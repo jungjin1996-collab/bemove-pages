@@ -101,7 +101,7 @@
         if (!CAN_ALERT) return Promise.resolve();
         return fetch(CONFIG.alertUrl, {
           method: 'POST', mode: 'no-cors', keepalive: true,
-          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('interest'), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
+          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('interest').concat(data.getAll('history').map(function (h) { return '이전 이용: ' + h; })), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
         }).catch(function () {});
       }
 
@@ -120,6 +120,7 @@
             interests: data.getAll('interest'),
             preferred_time: data.getAll('time'),
             visit_pref: data.getAll('visit'),
+            history: data.getAll('history'),
             consent_privacy: '동의'
           },
           // Formula X 개별 응답 화면의 "유입"은 source_context.utm_source 를 읽는다
