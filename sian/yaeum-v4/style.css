@@ -594,3 +594,11 @@ footer a { display: inline-block; padding: 12px 0; }
 .pv-offers--compact .pv-offer { min-height: 0; padding: 32px 0; }
 .pv-prices td s { display: block; font-size: 12px; font-weight: 500; color: #7a7a7a; text-decoration-thickness: 1px; }
 .pv-prices td b { display: block; font-weight: 800; }
+/* 정상가가 잘 보이게 (11-20 대표님) */
+.pv-prices td { padding: 12px 4px; }
+.pv-prices td s { font-size: 15px; font-weight: 700; color: #c9c9c9; text-decoration: line-through; text-decoration-color: #EC662A; text-decoration-thickness: 2px; margin-bottom: 2px; }
+.pv-prices td b { font-size: 18px; }
+.pv-prices tr.best td b { font-size: 20px; }
+.pv-plegend { display: flex; gap: 14px; margin: 0 0 6px; font-size: 12px; color: #a8a8a8; justify-content: flex-end; }
+.pv-plegend s { text-decoration-color: #EC662A; text-decoration-thickness: 2px; color: #c9c9c9; }
+.pv-plegend b { color: #fff; }
