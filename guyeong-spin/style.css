@@ -580,3 +580,25 @@ footer a { display: inline-block; padding: 12px 0; }
 .qk-headline { margin: 14px 0 0; font-size: 34px; font-weight: 900; letter-spacing: -.05em; line-height: 1.2; }
 .qk-headline + .qk-blead { margin-top: 8px; font-size: 16px; color: #e9e4dc; }
 .qk-points2 span em.hl { font-weight: 700; }
+
+/* 야음 사전판매가 표 (11-20) */
+.pv-prices { margin-top: 22px; border: 1px solid #2a2a2a; background: #121212; padding: 18px 16px 14px; }
+.pv-ptitle { margin: 0 0 12px; font-size: 15px; font-weight: 900; color: var(--orange); }
+.pv-prices table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.pv-prices th, .pv-prices td { padding: 11px 4px; border-top: 1px solid #262626; text-align: right; font-size: 15px; white-space: nowrap; }
+.pv-prices thead th { border-top: 0; padding-top: 0; font-size: 12px; font-weight: 700; color: #8a8a8a; }
+.pv-prices th[scope="row"], .pv-prices thead th:first-child { text-align: left; font-weight: 700; }
+.pv-prices td { font-weight: 800; color: #fff; }
+.pv-prices tr.best th, .pv-prices tr.best td { color: var(--orange); font-size: 17px; }
+.pv-pnote { margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: #bdbdbd; word-break: keep-all; }
+.pv-offers--compact .pv-offer { min-height: 0; padding: 32px 0; }
+.pv-prices td s { display: block; font-size: 12px; font-weight: 500; color: #7a7a7a; text-decoration-thickness: 1px; }
+.pv-prices td b { display: block; font-weight: 800; }
+/* 정상가가 잘 보이게 (11-20 대표님) */
+.pv-prices td { padding: 12px 4px; }
+.pv-prices td s { font-size: 15px; font-weight: 700; color: #c9c9c9; text-decoration: line-through; text-decoration-color: #EC662A; text-decoration-thickness: 2px; margin-bottom: 2px; }
+.pv-prices td b { font-size: 18px; }
+.pv-prices tr.best td b { font-size: 20px; }
+.pv-plegend { display: flex; gap: 14px; margin: 0 0 6px; font-size: 12px; color: #a8a8a8; justify-content: flex-end; }
+.pv-plegend s { text-decoration-color: #EC662A; text-decoration-thickness: 2px; color: #c9c9c9; }
+.pv-plegend b { color: #fff; }
