@@ -31,21 +31,25 @@ fbq("track","PageView");
   <button class="pv-sbtn" type="button" data-sheet="apply-sheet">50% 할인 자리 받아두기</button>
 </div>
 <main class="pv-page">
-  <header class="pv-hero" style="background-image:url(./assets/yaeum/r-hero.jpg)">
+  <header class="pv-hero pv-hero--short" style="background-image:url(./assets/yaeum/r-hero.jpg)">
     <p class="pv-imgnote">리뉴얼 완공 예상 렌더링</p>
     <p class="pv-tag">400평대 · 24시간 운영</p>
     <h1><span class="pv-kname">야음동 헬스장</span><span class="pv-kname pv-kname2">비무브짐</span><span class="pv-latin">RENEWAL OPEN</span></h1>
   </header>
   <p class="pv-band">2026.12.04 OPEN</p>
+  <section class="pv-quick" aria-label="사전등록 혜택 요약">
+    <p class="pv-qk-label">사전등록 회원권 50% 할인</p>
+    <p class="pv-qk-price"><span>12개월</span><s>936,000원</s><b>468,000원</b></p>
+    <p class="pv-qk-note">한 달 39,000원꼴 · 1차 선착순 40명 한정</p>
+    <button class="pv-cta" type="button" data-sheet="apply-sheet">50% 할인 자리 받아두기</button>
+    <p class="pv-sub">결제 X · 방문 약속 X · 30초면 끝나요</p>
+  </section>
 
   <section class="pv-count" aria-label="사전등록 마감">
     <p class="pv-dl">사전등록 마감까지</p>
     <span class="pv-big" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span>
-    <div class="pv-seat">
-      <div class="pv-seat-row"><span>1차 선착순 <b>40</b>명 한정</span><span class="pv-left">마감되면 정상가</span></div>
-    </div>
-    <button class="pv-cta" type="button" data-sheet="apply-sheet">50% 할인 자리 받아두기</button>
-    <p class="pv-sub">결제 없이 30초 · 혜택만 먼저 받아 두세요</p>
+    <p class="pv-sub">1차 선착순 40명이 차거나 마감되면 정상가</p>
+    
   </section>
 
   <section class="pv-sec" id="offers">
@@ -245,26 +249,27 @@ fbq("track","PageView");
 <dialog class="sheet pv-sheet" id="apply-sheet" aria-label="오픈 혜택 미리 받기">
   <button class="sheet-close" type="button" aria-label="닫기">닫기</button>
   <div class="sheet-body">
-    <p class="pv-band small">2026.12.04 OPEN</p>
+    
     <h3>오픈 혜택 미리 받기</h3>
-    <p class="pv-body">이름과 번호만 남기면 혜택이 내 이름으로 잡혀요. 방문 날짜는 통화하면서 편하게 정하면 돼요.</p>
+    
     <p class="pv-sheet-seat"><span>1차 선착순 40명 한정</span> · 마감까지 <span class="pv-t" data-countdown="2026-12-03T23:59:59+09:00">--일 --:--:--</span></p>
     <form class="lead-form po-form" data-branch="yaeum" data-request="사전등록" data-done-title="혜택이 잡혔어요!" data-done-body="담당자가 곧 전화드려 받으신 혜택을 안내해 드릴게요. 전화를 못 받으시면 문자로 남겨 드려요." novalidate>
       <div class="po-fields">
         <label for="pv-name">이름</label><input id="pv-name" name="name" type="text" autocomplete="name" placeholder="홍길동" required>
         <label for="pv-phone">휴대폰 번호</label><input id="pv-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" required>
       </div>
-      <fieldset class="po-opt pv-visit"><legend>와 보고 싶은 때 (선택 · 안 골라도 돼요)</legend><div class="chips"><label><input type="checkbox" name="visit" value="첫 주 평일"><span>첫 주 평일</span></label><label><input type="checkbox" name="visit" value="첫 주말"><span>첫 주말</span></label><label><input type="checkbox" name="visit" value="오픈 전 미리 상담"><span>오픈 전 미리 상담</span></label></div></fieldset>
-      <details class="pv-more"><summary>관심 운동 · 시간대 선택 (선택)</summary>
-        <fieldset class="po-opt"><legend>관심 운동</legend><div class="chips"><label><input type="checkbox" name="interest" value="헬스"><span>헬스</span></label><label><input type="checkbox" name="interest" value="PT"><span>PT</span></label><label><input type="checkbox" name="interest" value="요가"><span>요가</span></label><label><input type="checkbox" name="interest" value="필라테스"><span>필라테스</span></label><label><input type="checkbox" name="interest" value="줌바"><span>줌바</span></label><label><input type="checkbox" name="interest" value="방송댄스"><span>방송댄스</span></label></div></fieldset>
-        <fieldset class="po-opt"><legend>운동할 시간대</legend><div class="chips"><label><input type="checkbox" name="time" value="새벽"><span>새벽</span></label><label><input type="checkbox" name="time" value="오전"><span>오전</span></label><label><input type="checkbox" name="time" value="오후"><span>오후</span></label><label><input type="checkbox" name="time" value="저녁"><span>저녁</span></label><label><input type="checkbox" name="time" value="밤"><span>밤</span></label></div></fieldset>
-      </details>
+      
       <label class="consent"><input type="checkbox" name="consent_privacy" required><span>[필수] 개인정보 수집·이용 동의 (이름, 휴대폰 번호 / 오픈 안내 / 마지막 상담일로부터 3년 보관) <a href="privacy/">전문 보기</a></span></label>
-      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 문자 수신 동의</span></label><p class="pixel-note">방문·신청 여부는 메타 픽셀(쿠키)로 측정합니다. 상담 고객 번호는 암호화해 맞춤 광고에 쓸 수 있으며, 원하지 않으면 바로 빼 드립니다. <a href="privacy/">자세히</a></p>
+      <label class="consent"><input type="checkbox" name="consent_marketing"><span>[선택] 이벤트·혜택 문자 수신 동의</span></label>
       <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="error form-error" role="alert"></p>
       <button class="pv-cta" type="submit">혜택 받아두기</button>
       <p class="pv-sub">결제 X · 방문 약속 X · 받아 두기만 해도 혜택은 그대로</p>
+      <details class="pv-more"><summary>상담이 빨라지는 선택 질문 (안 골라도 돼요)</summary>
+        <fieldset class="po-opt pv-visit"><legend>와 보고 싶은 때 (선택 · 안 골라도 돼요)</legend><div class="chips"><label><input type="checkbox" name="visit" value="첫 주 평일"><span>첫 주 평일</span></label><label><input type="checkbox" name="visit" value="첫 주말"><span>첫 주말</span></label><label><input type="checkbox" name="visit" value="오픈 전 미리 상담"><span>오픈 전 미리 상담</span></label></div></fieldset>
+        <fieldset class="po-opt"><legend>관심 운동</legend><div class="chips"><label><input type="checkbox" name="interest" value="헬스"><span>헬스</span></label><label><input type="checkbox" name="interest" value="PT"><span>PT</span></label><label><input type="checkbox" name="interest" value="요가"><span>요가</span></label><label><input type="checkbox" name="interest" value="필라테스"><span>필라테스</span></label><label><input type="checkbox" name="interest" value="줌바"><span>줌바</span></label><label><input type="checkbox" name="interest" value="방송댄스"><span>방송댄스</span></label></div></fieldset>
+        <fieldset class="po-opt"><legend>운동할 시간대</legend><div class="chips"><label><input type="checkbox" name="time" value="새벽"><span>새벽</span></label><label><input type="checkbox" name="time" value="오전"><span>오전</span></label><label><input type="checkbox" name="time" value="오후"><span>오후</span></label><label><input type="checkbox" name="time" value="저녁"><span>저녁</span></label><label><input type="checkbox" name="time" value="밤"><span>밤</span></label></div></fieldset>
+      </details><p class="pixel-note">방문·신청 여부는 메타 픽셀(쿠키)로 측정합니다. 상담 고객 번호는 암호화해 맞춤 광고에 쓸 수 있으며, 원하지 않으면 바로 빼 드립니다. <a href="privacy/">자세히</a></p>
     </form>
   </div>
 </dialog>

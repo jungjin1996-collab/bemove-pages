@@ -602,3 +602,15 @@ footer a { display: inline-block; padding: 12px 0; }
 .pv-plegend { display: flex; gap: 14px; margin: 0 0 6px; font-size: 12px; color: #a8a8a8; justify-content: flex-end; }
 .pv-plegend s { text-decoration-color: #EC662A; text-decoration-thickness: 2px; color: #c9c9c9; }
 .pv-plegend b { color: #fff; }
+
+/* 야음 v5 시안 (11-22): 첫 화면 안에 혜택·가격·버튼 */
+.pv-hero--short { aspect-ratio: 16 / 11; max-height: 34vh; padding-bottom: 12px; }
+.pv-hero--short h1 { font-size: 0.82em; }
+.pv-quick { padding: 18px 16px 22px; background: #0d0c0a; border-bottom: 1px solid #262626; text-align: center; }
+.pv-qk-label { margin: 0; font-size: 15px; font-weight: 900; color: #EC662A; }
+.pv-qk-price { margin: 6px 0 0; display: flex; justify-content: center; align-items: baseline; gap: 8px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.pv-qk-price span { font-size: 15px; font-weight: 700; color: #e9e4dc; }
+.pv-qk-price s { font-size: 16px; color: #bdbdbd; text-decoration: line-through 2px #EC662A; }
+.pv-qk-price b { font-size: 30px; font-weight: 900; color: #fff; letter-spacing: -.02em; }
+.pv-qk-note { margin: 4px 0 14px; font-size: 14px; color: #c9c3b8; }
+.pv-quick .pv-cta { width: 100%; }
