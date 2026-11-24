@@ -103,7 +103,7 @@
         if (!CAN_ALERT) return Promise.resolve();
         return fetch(CONFIG.alertUrl, {
           method: 'POST', mode: 'no-cors', keepalive: true,
-          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('interest').concat(data.getAll('history').map(function (h) { return '이전 이용: ' + h; })), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
+          body: JSON.stringify({ branch: form.dataset.branch, name: name, phone: phone, visit: data.getAll('visit'), interests: data.getAll('contact').map(function (c) { return '통화 편한 시간: ' + c; }).concat(data.getAll('interest'), data.getAll('history').map(function (h) { return '이전 이용: ' + h; }), data.getAll('perk').map(function (p) { return '받을 혜택: ' + p; })), time: data.getAll('time'), utm_source: tr.utm_source || '', utm_campaign: tr.utm_campaign || '' })
         }).catch(function () {});
       }
 
@@ -123,6 +123,8 @@
             preferred_time: data.getAll('time'),
             visit_pref: data.getAll('visit'),
             history: data.getAll('history'),
+            perk: data.get('perk') || '',
+            contact: data.get('contact') || '',
             consent_privacy: '동의'
           },
           // Formula X 개별 응답 화면의 "유입"은 source_context.utm_source 를 읽는다
@@ -259,6 +261,15 @@
     };
     load(); setInterval(load, 30000);
   });
+
+  // 선착순 차수(1차 → 2차 → 3차…): 실제 신청 수 ÷ 차수 인원. 집계를 못 받으면 처음 글자(1차) 그대로
+  var rolls = document.querySelectorAll('[data-tier-roll]');
+  if (rolls.length && CONFIG.alertUrl && !LOCAL) {
+    fetch(CONFIG.alertUrl + '?count=' + encodeURIComponent(CONFIG.branch)).then(function (r) { return r.json(); }).then(function (j) {
+      var taken = Number(j.taken) || 0;
+      rolls.forEach(function (el) { el.textContent = (Math.floor(taken / (Number(el.dataset.size) || 40)) + 1) + '차'; });
+    }).catch(function () {});
+  }
 
   // 오픈 D-day 표시 (오픈 전 사전등록 페이지)
   document.querySelectorAll('[data-dday]').forEach(function (el) {
