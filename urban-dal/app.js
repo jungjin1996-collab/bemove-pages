@@ -52,8 +52,8 @@
   }
   track('view');
   // 메타 픽셀(지점별 site.json metaPixels). 머리의 기본 코드가 localhost 에서는 fbq 를 만들지 않으므로 여기서도 조용히 넘어간다.
-  function pixel(kind, name) {
-    try { if (typeof window.fbq === 'function') window.fbq(kind, name); } catch (e) {}
+  function pixel(kind, name, params) {
+    try { if (typeof window.fbq === 'function') { if (params) window.fbq(kind, name, params); else window.fbq(kind, name); } } catch (e) {}
   }
   // "시작" = 신청 창을 열거나, 입력칸을 처음 누르거나, (둘 다 없이) 바로 제출할 때 중 가장 먼저. 한 번만 셈
   var started = false;
@@ -134,7 +134,7 @@
       }) : Promise.resolve('alert-only')).then(function (responseId) {
         if (!responseId) throw new Error('no_response_id');
         // 메타 픽셀 Lead: Formula X 저장이 성공했을 때만. 이름·번호 같은 개인정보는 보내지 않는다.
-        if (CONNECTED && responseId !== 'alert-only') pixel('track', 'Lead');
+        if (CONNECTED && responseId !== 'alert-only') pixel('track', 'Lead', CONFIG.slug ? { content_name: CONFIG.slug } : null);
         sendAlert();
         showDone(doneTitle, doneBody);
       }).catch(function () {

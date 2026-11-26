@@ -10,7 +10,14 @@
 <link rel="stylesheet" href="./fonts.css">
 <link rel="stylesheet" href="./style.css">
 <script>document.documentElement.classList.add('js')</script>
-
+<script>
+if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+fbq("set","autoConfig",false,"2842682572849841");
+fbq("init","2842682572849841");
+fbq("track","PageView");
+}
+</script>
 <link rel="stylesheet" href="./offer.css">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0d0c0a">
@@ -111,11 +118,11 @@
       <p class="error form-error" role="alert"></p>
       <button class="pv-cta" type="submit">무료로 맡아두기</button>
       <p class="pv-sub">결제 없이, 혜택만 먼저 맡아두세요</p>
-      
+      <p class="pixel-note">광고 성과 측정을 위해 메타 픽셀(쿠키)로 방문·신청 여부를 Meta에 보냅니다. 이름·번호는 보내지 않습니다. <a href="privacy/">자세히</a></p>
     </form>
   </div>
 </dialog>
-<script>window.BEMOVE={"url":"https://hiydmdhcqlgorkeljkrj.supabase.co","key":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpeWRtZGhjcWxnb3JrZWxqa3JqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4ODMxNjgsImV4cCI6MjA4NjQ1OTE2OH0.rBa_ls72UU_1kyBZ_eu5Rro8U4P-BkUtHGgdGQ5lIAA","branch":"urban-dal","formId":"16b8301d-8e93-4713-ae73-d93172dd4577","alertUrl":"https://script.google.com/macros/s/AKfycbyoQLmi2Tm50bX2Gc-0WW2y6hfOhQAdq0isrR041_CFmFjGFZ6mRAdKQ9Dlke9yDfIJSA/exec","freeUntil":null}</script>
+<script>window.BEMOVE={"url":"https://hiydmdhcqlgorkeljkrj.supabase.co","key":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpeWRtZGhjcWxnb3JrZWxqa3JqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4ODMxNjgsImV4cCI6MjA4NjQ1OTE2OH0.rBa_ls72UU_1kyBZ_eu5Rro8U4P-BkUtHGgdGQ5lIAA","branch":"urban-dal","slug":"urban-dal","formId":"16b8301d-8e93-4713-ae73-d93172dd4577","alertUrl":"https://script.google.com/macros/s/AKfycbyoQLmi2Tm50bX2Gc-0WW2y6hfOhQAdq0isrR041_CFmFjGFZ6mRAdKQ9Dlke9yDfIJSA/exec","freeUntil":null}</script>
 <script src="./app.js"></script>
 <script src="./offer.js"></script>
 <script>(function(){document.querySelectorAll("video[autoplay]").forEach(function(v){v.muted=true;function f(){v.controls=true}var p=v.play&&v.play();if(p&&p.catch)p.catch(f);v.addEventListener("error",f);setTimeout(function(){if(v.paused)f()},4000)})})();</script>
